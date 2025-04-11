@@ -2,6 +2,8 @@ name: Python Project
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '15 18 * * *' # Runs at 12 AM NPT (6:15 PM UTC)
 
 permissions:
   checks: write
