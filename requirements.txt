@@ -44,5 +44,4 @@ pyjwt
 sqlalchemy
 flask
 paramiko
-pycrypto
 tornado
