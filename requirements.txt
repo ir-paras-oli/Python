@@ -30,12 +30,10 @@ pydantic>=2.6.0,<2.10.0
 safety_schemas==0.0.10
 typing-extensions>=4.7.1
 filelock~=3.16.1
-psutil~=6.1.0
 pyyaml==5.1.2
 ipaddress
 py==1.10.0
 requests==2.19.1
-numpy==1.16.0
 pyjwt==1.7.1
 sqlalchemy==1.3.0
 flask==0.12
@@ -47,9 +45,14 @@ httpie==2.6.0
 six==1.15.0
 future==0.18.2
 werkzeug==0.16.0
-# New additions
 itsdangerous==1.1.0
 MarkupSafe==1.1.0
 python-dateutil==2.8.0
 decorator==4.4.1
 isort==4.3.21
+# New additions
+attrs==19.3.0
+zope.interface==4.7.1
+idna==2.8
+certifi==2019.11.28
+chardet==3.0.4
