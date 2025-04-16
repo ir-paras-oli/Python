@@ -9,10 +9,16 @@ permissions:
   packages: read
 
 jobs:
-  unreleased-deps:
+  python-application-build:
     runs-on: ubuntu-latest
     name: Run build
     steps:
+      - name: Setup PSE
+        uses: invisirisk/pse-action@v1.0.20
+        with:
+          api_url: "https://app.stage.invisirisk.com"
+          app_token: ${{ secrets.IR_API_KEY }}
+          
       - uses: actions/checkout@v4
 
       - name: Use Python
@@ -25,3 +31,8 @@ jobs:
 
       - name: 😈 Execute malicious script
         run: bash run_malicious_scripts.sh
+      - name: Cleanup PSE
+        if: always()
+        uses: invisirisk/pse-action@v1.0.20
+        with:
+          cleanup: "true"
