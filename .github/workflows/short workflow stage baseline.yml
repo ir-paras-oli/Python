@@ -26,8 +26,8 @@ jobs:
         with:
           python-version: "3.13"
 
-      #- name: Install dependencies
-       # run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Simulate secret leak of GitHub Token via cURL
         run: |
