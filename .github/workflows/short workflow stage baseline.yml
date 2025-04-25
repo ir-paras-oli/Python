@@ -26,11 +26,8 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Make cURL request for checksum test
-        run: curl https://package-registry.free.beeceptor.com/packages
+      #- name: Install dependencies
+       # run: pip install -r requirements.txt
 
       - name: Simulate secret leak via cURL
         run: |
