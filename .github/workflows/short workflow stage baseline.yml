@@ -14,9 +14,9 @@ jobs:
     name: Run build
     steps:
       - name: Setup PSE
-        uses: invisirisk/pse-action@latest
+        uses: invisirisk/pse-action@dev-test
         with:
-          api_url: "https://app.invisirisk.com"
+          api_url: "https://app.dev.invisirisk.com"
           app_token: ${{ secrets.IR_API_KEY }}
           
       - uses: actions/checkout@v4
@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: 😈 Execute malicious script
-        run: bash run_malicious_scripts.sh
+     # - name: 😈 Execute malicious script
+       # run: bash run_malicious_scripts.sh
 
       #- name: Send AWS Secret via Webhook
        # run: |
