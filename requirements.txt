@@ -34,4 +34,4 @@ filelock~=3.16.1
 psutil~=6.1.0
 ipaddress
 cryptography
-rsa==3.3
+rsa==3.3 
